@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+    background: linear-gradient(135deg, #000 0%, #0a0a0a 100%);
+  }
+}
+
+.cyber-grid {
+  background-image: linear-gradient(rgba(47, 255, 160, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 255, 160, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: -1px -1px;
+}
+
+.cyber-border {
+  position: relative;
+}
+
+.cyber-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #2FFFA0, #4A90E2, #6B4FBB) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+@keyframes terminal-appear {
+  0% { opacity: 0; transform: translateY(5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-terminal-1 {
+  animation: terminal-appear 0.5s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.animate-terminal-2 {
+  animation: terminal-appear 0.5s ease-out forwards;
+  animation-delay: 2s;
+}
+
+.animate-terminal-3 {
+  animation: terminal-appear 0.5s ease-out forwards;
+  animation-delay: 3.5s;
+}
